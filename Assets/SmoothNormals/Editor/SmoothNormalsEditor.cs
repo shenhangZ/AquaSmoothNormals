@@ -5,6 +5,9 @@ namespace AquaSys.SmoothNormals.Editor
 {
     public class SmoothNormalsEditor : EditorWindow
     {
+        GameObject root;
+        Mesh mesh;
+
         [MenuItem("Tools/SmoothNormals")]
         static SmoothNormalsEditor OpenWindow()
         {
@@ -13,8 +16,7 @@ namespace AquaSys.SmoothNormals.Editor
             window.maxSize = new Vector2(600f, 1000f);
             return window;
         }
-        GameObject root;
-        Mesh mesh;
+  
         private void OnGUI()
         {
             root = (GameObject)EditorGUILayout.ObjectField("Model To Smooth", root, typeof(GameObject), true);
